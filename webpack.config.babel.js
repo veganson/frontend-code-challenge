@@ -36,4 +36,5 @@ module.exports = {
       template: 'index.html',
     }),
   ],
+  devtool: 'sourcemap',
 };

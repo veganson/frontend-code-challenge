@@ -1,19 +1,24 @@
-import { createStore } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import rootSaga from 'js/utils/rootSaga';
+import createRootReducer from './createRootReducer';
 
+const sagaMiddleware = createSagaMiddleware();
 const initialState = {};
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
+
+const middlewares = [sagaMiddleware];
 
 const createAppStore = () => {
   const store = createStore(
-    reducer,
+    createRootReducer(),
     initialState,
-    global.devToolsExtension ? global.devToolsExtension() : f => f,
+    compose(
+      applyMiddleware(...middlewares),
+      global.devToolsExtension ? global.devToolsExtension() : f => f,
+    ),
   );
+
+  sagaMiddleware.run(rootSaga);
 
   return store;
 };

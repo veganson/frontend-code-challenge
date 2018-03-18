@@ -1,1 +1,1 @@
-export { default as AppartmentList } from './components/AppartmentList';
+export { default as AppartmentList } from './containers/AppartmentList';
