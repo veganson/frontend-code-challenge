@@ -1,4 +1,4 @@
-import path  from 'path';
+import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 module.exports = {
@@ -16,17 +16,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          'css-loader',
-          'postcss-loader',
-        ],
-      }, {
+        use: ['css-loader', 'postcss-loader'],
+      },
+      {
         test: /\.scss$/,
-        use: [
-          'css-loader',
-          'postcss-loader',
-          'sass-loader',
-        ],
+        use: ['css-loader', 'postcss-loader', 'sass-loader'],
       },
     ],
   },

@@ -9,9 +9,12 @@
   "scripts": {
     "serve": "webpack-dev-server",
     "lint": "eslint ./ --ext js,jsx --cache",
-    "lint:changed": "LIST=$(git diff-index --name-only HEAD | grep -E '(js|jsx)$'); if [ \"$LIST\" ]; then eslint $LIST --quiet --fix; fi",
-    "eslint-check": "eslint --print-config .eslintrc | eslint-config-prettier-check",
-    "format": "yarn prettier '**/*.{js,jsx,ts,tsx,md,json,scss,css,gql}' --write",
+    "lint:changed":
+      "LIST=$(git diff-index --name-only HEAD | grep -E '(js|jsx)$'); if [ \"$LIST\" ]; then eslint $LIST --quiet --fix; fi",
+    "eslint-check":
+      "eslint --print-config .eslintrc | eslint-config-prettier-check",
+    "format":
+      "yarn prettier '**/*.{js,jsx,ts,tsx,md,json,scss,css,gql}' --write",
     "format:changed": "pretty-quick",
     "precommit": "pretty-quick --staged && yarn lint:changed"
   },
