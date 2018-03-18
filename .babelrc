@@ -1,4 +1,16 @@
 {
-  "presets": "babel-preset-env",
-  "plugins": ["syntax-async-functions"]
+  "presets": [
+    ["env", {
+      "targets": {
+        "node": "current"
+      }
+    }],
+    "react"
+  ],
+  "plugins": [
+    "ramda",
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    "dynamic-import-node"
+  ]
 }

@@ -2,10 +2,16 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 module.exports = {
-  entry: './index.js',
+  entry: './src/js/app.js',
   output: {
     filename: './bundle.js',
     path: path.join(__dirname, 'dist'),
+  },
+  resolve: {
+    alias: {
+      js: path.resolve('src/js'),
+      css: path.resolve('src/css'),
+    },
   },
   module: {
     rules: [
