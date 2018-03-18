@@ -1,0 +1,97 @@
+.appartment-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.appartment {
+  display: inline-flex;
+  position: relative;
+  width: 22.5rem;
+  height: 28.7rem;
+  margin: 1rem 1.5rem;
+  overflow: hidden;
+  background-color: white;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.appartment__offer-type {
+  position: absolute;
+  display: block;
+  top: 1.3rem;
+  left: 1.2rem;
+  background-color: white;
+  padding: 0.5rem 0.6rem;
+  border-radius: 2px;
+  color: $grey;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 7px -1px $grey2;
+}
+
+.appartment__details {
+  padding: 2.3rem 2.4rem 2.8rem;
+  border: 1px solid $light-grey2;
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 1;
+}
+
+.appartment__img {
+  height: 15rem;
+  max-height: 15rem;
+}
+
+.appartment__title {
+  margin: 0;
+  letter-spacing: 0.6px;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.appartment__space {
+  flex-grow: 1;
+}
+
+.appartment__address {
+  margin: 0.9rem 0 1.1rem;
+  color: $light-grey;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.appartment__bottom-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.appartment__price {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.appartment__rooms {
+  letter-spacing: -0.4px;
+  font-weight: 100;
+}
+
+.appartment__vertical-divider {
+  width: 1px;
+  height: 1.8rem;
+  background-color: $light-grey2;
+  margin: 0 1rem;
+  vertical-align: middle;
+}
+
+.appartment__area {
+  font-weight: 100;
+}
