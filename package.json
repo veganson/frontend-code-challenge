@@ -7,23 +7,41 @@
   "author": "Tejas Kumar <tejas.kumar@mcmakler.de>",
   "license": "MIT",
   "scripts": {
-    "serve": "webpack-dev-server"
+    "serve": "webpack-dev-server",
+    "lint": "eslint ./ --ext js,jsx --cache",
+    "lint:changed": "LIST=$(git diff-index --name-only HEAD | grep -E '(js|jsx)$'); if [ \"$LIST\" ]; then eslint $LIST --quiet --fix; fi",
+    "eslint-check": "eslint --print-config .eslintrc | eslint-config-prettier-check",
+    "format": "yarn prettier '**/*.{js,jsx,ts,tsx,md,json,scss,css,gql}' --write",
+    "format:changed": "pretty-quick",
+    "precommit": "pretty-quick --staged && yarn lint:changed"
   },
   "devDependencies": {
     "autoprefixer": "^8.1.0",
     "babel-core": "^6.25.0",
+    "babel-eslint": "^8.2.2",
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.5.2",
     "css-loader": "^0.28.11",
-    "eslint": "^4.0.0",
+    "eslint": "^4.19.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-import-resolver-webpack": "^0.8.4",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jest": "^21.15.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
     "html-webpack-plugin": "^2.28.0",
     "node-sass": "^4.7.2",
     "postcss-loader": "^2.1.2",
+    "prettier": "^1.11.1",
+    "pretty-quick": "^1.4.1",
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.18.2",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react": "^16.2.0"
+  }
 }
