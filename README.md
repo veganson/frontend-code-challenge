@@ -1,50 +1,19 @@
-# Front-End Interview Test
+## How to use
 
-This is a simple front-end code challenge created to serve two purposes:
+* Run on localhost: `yarn install` and `yarn run serve`, then go to [localhost:8080](localhost:8080)
+* Linter: `yarn run lint` or `yarn run lint:changed` for changed files only
+* Code prettifying: `yarn run format` or `yarn run format:changed` for changed files only
+* Check if eslintrc has any conflicts with prettier config (in case you want to change any of those): `yarn run eslint-check`
+* Run precommit routine: `yarn run precommit`. It prettifies and lints changed files
+* Husky 🐕 automatically adds precommit hooks so you can commit without hesitation right away 🔥✊
 
-1.  Show off your skills,
-1.  Give us a better understanding of your skills.
+## Tech stack explanation
 
-## The Task
+* I used sass to extract some props to variables & reuse them. Postcss for prefixes.
+* React & redux is default for me: quick bootstrapping, easy maintaining, helps to keep everything small and modular. I used ramda because I love fp (even though abviously it wasn't necessary in such a small project). Also redux-saga for async stuff and other redux stuff.
+* Dev environment uses eslint, husky, prettier and babel (webpack.config is ran with babel too). I didn't have time to cover everything w/ test, usually I use jest for it)
 
-The programming challenge exists in 2 parts:
+## Other notes
 
-* Part A: HTML + CSS
-* Part B: Javascript
-
-### PART A: HTML + CSS
-
-![Screen](https://raw.githubusercontent.com/mcmakler/frontend-code-challenge/master/assets/fe_test_example_screen.png)
-
-* Create a layout based on the given screen (fe_test_example_screen.png).
-* Style the layout consistently and beautifully, adhering as closely to the design as possible.
-* **NOTE:** You are free to use any preprocessor you wish, or write raw CSS. _Bonus points for an explanation of your choice._
-
-### PART B: Javascript
-
-* Consume our public API @ https://api.mcmakler.de/v1/advertisements to retrieve a list of advertisements of vacant apartments.
-* Display the first 10 advertisements in the HTML + CSS layout created in step A, sticking to the layout, placing data where it fits.
-* **NOTE:** You are free to use any framework you wish, or do it VanillaJS style. _Brief explanation of your choice._
-
-## Additional Instructions
-
-* Fork this repository
-* After you're done, provide us the link to your repository.
-* Leave comments where you were not sure how to properly proceed.
-* Implementations without a README will be automatically rejected.
-* No pull requests
-* ES6 and above
-
-## Bonus Points
-
-* Tests
-* Clean code!
-* Knowledge of application flow.
-* Knowledge of modern best practices/coding patterns.
-* Demonstration of good state management.
-* Usage of frameworks/supersets.
-* Pixel perfection.
-* Componential thinking.
-* Usage of linters.
-* Git hooks.
-* Usage of Material Design concepts
+* I couldn't manage to use the specified API due to cors problem. Idk if I was supposed to use a nodejs server for it, but I used mocked data (real though, copied from api response).
+* I guess Miefen and Kaufen are the 'purpose' property, but I'm not sure so I just hardcoded Miefen in every advertisement.
