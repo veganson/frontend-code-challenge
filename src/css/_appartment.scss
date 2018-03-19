@@ -28,6 +28,7 @@
   font-size: 0.8rem;
   letter-spacing: 1px;
   box-shadow: 0 2px 7px -1px $grey2;
+  cursor: pointer;
 }
 
 .appartment__details {
@@ -43,6 +44,7 @@
 .appartment__img {
   height: 15rem;
   max-height: 15rem;
+  cursor: pointer;
 }
 
 .appartment__title {
